@@ -13,7 +13,7 @@ print('''
 | )   ( |   | |     | )       | )   ( | | )       | )   ( | | (__/  ) | )   ( |  ___) (___ | )  \  |              
 |/     \|   \_/     |/        | /     \| |/        |/     \ |(______/ |/     \| \_______/ |/    )_)                                                                                 
                                                                                                     
-                 By: Arkesh Chaoudhaour , Saransh Agarkar , Vedanth T. Sreenivasan                                                         
+                 By: Arkesh Choudhary , Saransh Agarkar , Vedanth T. Sreenivasan                                                         
 ___________________________________________________________________________________________________''')
 
 user_name = input('Login ID: ')
