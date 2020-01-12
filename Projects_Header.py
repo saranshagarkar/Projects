@@ -1,6 +1,6 @@
 print('Welcome')#vedanth front end belongs to you so make it beautiful, all the outputs and display presentation is also your work
 
-Teams={'India':[100, 0, 0, 1], 'Australia':[100, 0, 0, 2], 'South Africa':[100, 0, 0, 3], 'New Zealand':[100, 0, 0], 'England':[100, 0, 0], 'Pakistan':[100, 0, 0], 'Sri Lanka':[100, 0, 0], 'Bangladesh':[100, 0, 0], 'West Indies':[100, 0, 0], 'Afghanistan':[100, 0, 0]}
+Teams={'India':[100, 0, 0, 1], 'Australia':[100, 0, 0, 2], 'South Africa':[100, 0, 0, 3], 'New Zealand':[100, 0, 0, 4], 'England':[100, 0, 0, 5], 'Pakistan':[100, 0, 0, 6], 'Sri Lanka':[100, 0, 0, 7], 'Bangladesh':[100, 0, 0, 8], 'West Indies':[100, 0, 0, 9], 'Afghanistan':[100, 0, 0, 10}
 proceed='Y'
 
 while proceed in 'Yy':
