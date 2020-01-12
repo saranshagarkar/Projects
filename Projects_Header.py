@@ -1,5 +1,8 @@
 print('Welcome')#vedanth front end belongs to you so make it beautiful, all the outputs and display presentation is also your work
 
+## Guys - Apart from the variables to store the data and the improvement on the loop flow, I've changed the variable names from a,b,c,d, etc.
+## to names that would be easier to understand, should we need to review the code later on, or if Laxmi ma'am wants to just glance through
+
 Teams = {'India':[100, 0, 0, 1], 'Australia':[100, 0, 0, 2], 'South Africa':[100, 0, 0, 3], 'New Zealand':[100, 0, 0, 4], 'England':[100, 0, 0, 5], 'Pakistan':[100, 0, 0, 6], 'Sri Lanka':[100, 0, 0, 7], 'Bangladesh':[100, 0, 0, 8], 'West Indies':[100, 0, 0, 9], 'Afghanistan':[100, 0, 0, 10]}
 proceed = 'Y'
 
@@ -11,52 +14,42 @@ while proceed in 'Yy':
         team = input('Enter the team name: ')
         for item in Teams.keys():
             if team.lower() == item.lower():
-                print(item,'\n','Wins:', Teams[item][1], '\n', 'Loses:', Teams[item][2],'\n','Rank:', Teams[item][3])#vedanth another output you can edit 
+                print(item,'\n','Wins:', Teams[item][1], '\n', 'Losses:', Teams[item][2],'\n','Rank:', Teams[item][3])#vedanth another output you can edit 
                 break
         else:
             print("It seems there was a typing error, or the team you've entered isn't in our list. Try again.")
 
     elif cmd_num == 2:
-        b=input('Enter the name of the winning team')#so saransh over here you will have to slice the team names to the first three characters as I mentioned earlier for the ranking
-        c=input('Enter the name of the losing team') #saransh on the info list you can the team name as another detail and display it instead of what ive chosen
-        
-        for i in range(len(d)):
-        
-           for j in d[i]:         #rating[1}+=100/(100+rating[-1]-rating[0])
-        
-               if j==c:                                    #example reference to how our rating basically works
-        
-                  h=d[i][j][0]                     
-        
-        for i in range(len(d)): 
-        
-            for k in d[i]:
-        
-                if k==b:
-        
-                d[i][k][0]=d[i][k][0]+100/(100+d[i][k][0]-h)
+        loser = input('Enter the name of the losing team: ')
+        for item in Teams.keys():
+            if loser.lower() == item.lower():
+                rating_loser = Teams[item][0]
+                Team[item][2] += 1
+                break
+        else:
+            print("It seems there was a typing error, or the team you've entered isn't in our list.")    
+            
+        winner = input('Enter the name of the winning team: ')
+        for item in Teams.keys():
+            if winner.lower() == item.lower():
+                Team[item][1] += 1
+                Teams[item][0] += 100/(100 + Teams[item][0] - rating_loser)
+                break
+        else:
+            print("It seems there was a typing error, or the team you've entered isn't in our list.")   
         
         print('Record updated')          
 
     elif cmd_num == 3:
     
-        e=input('Enter the new team name')#again saransh as I said slicing will lead to better data validation, will become more user friendly
+        team = input('Enter the new team name')
+        wins = int(input('Enter the team wins'))
+        losses = int(input('Enter the team loses'))
         
-        f=int(input('Enter the team wins'))
+        Teams[team] = [100, wins, losses, len(Teams) + 1]                       ## The new team would be assigned the last rank. (This comment should be left in the final code of the project too, except this sentence in the bracket.)
         
-        g=int(input('Enter the team loses'))
-        
-        d.append({e:[100,f,g]})
-        
-        for i in range(len(d)):     #vedanth another set of outputs
-        
-           for j in d[i]:
-        
-               if j==e:
-        
-                  print(j,'\n','Wins:',d[i][j][1],'\n','Loses:',d[i][j][2],'\n','Rank:',i+1)
-        
-          print('New record has been updated with default team rating of 100')
+        print(team,'\n','Wins:', wins,'\n','Loses:', losses,'\n','Rank:', len(Teams) + 1) #vedanth another set of outputs
+        print('\n','New record has been updated with default team rating of 100')
     
     elif cmd_num == 4:
     
