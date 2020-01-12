@@ -1,330 +1,117 @@
-#Start 
-import datetime
-from os import system
-from time import sleep
+#%%
 
-print('''
----------------------------------------------------------------------------------------------------                 
- _______             _______             _______   _______   ______    _______   _________  _                              
-(       )|\     /|  (  ____ ) |\     /| (  ____ ) (  ___  ) (  __  \  (       )  \__   __/ ( (    /|                  
-| () () |( \   / )  | (    )| | )   ( | | (    )| | (   ) | | (  \  ) | () () |     ) (    |  \  ( |                      
-| || || | \ (_) /   | (____)| | (___) | | (____)| | (___) | | |   ) | | || || |     | |    |   \ | |                          
-| |(_)| |  \   /    |  _____) |  ___  | |  _____) |  ___  | | |   | | | |(_)| |     | |    | (\ \) |                          
-| |   | |   ) (     | (       | (   ) | | (       | (   ) | | |   ) | | |   | |     | |    | | \   |              
-| )   ( |   | |     | )       | )   ( | | )       | )   ( | | (__/  ) | )   ( |  ___) (___ | )  \  |              
-|/     \|   \_/     |/        | /     \| |/        |/     \ |(______/ |/     \| \_______/ |/    )_)                                                                                 
-                                                                                                    
-                 By: Arkesh Choudhary , Saransh Agarkar , Vedanth T. Sreenivasan                                                         
-___________________________________________________________________________________________________''')
+print('Welcome')#vedanth front end belongs to you so make it beautiful, all the outputs and display presentation is also your work
 
-user_name = input('Login ID: ')
-pass_word = input('Password: ')
-gen_der = input('Gender (M) , (F): ')
+d=[{'Ind':[100,1,1]},{'Aus':[100,1,1]}]#saransh enter a few more records I have set up a couple as an example
 
-def clear():
-    if gen_der == 'M' or 'm':
-       X = system('clear')
-    if gen_der == 'F' or 'f':
-        y = system('clear')
+i='Y'                                  #the key is only of three characters as it is easier to access it that way while I have written the ranking code
 
-sleep(1)
+while i in 'Yy':
 
-clear()
+      print('Select the designated number to the command','\n','1 View the record of a team','\n','2 Input a match result','\n','3 Enter a new team record','\n','4 View overall rankings')
 
-if gen_der == 'M':
-    print('\t','\t', '\t','Welcome Master' , user_name)
-    print('\t', 'Date And Time Of Login: ', datetime.datetime.now())
-if gen_der == 'm':
-    print('Welcome Master' , user_name)
-    print('\t', 'Date And Time Of Login: ', datetime.datetime.now())
-if gen_der == 'F':
-    print('\t','\t', '\t','Welcome Miss' , user_name)
-    print('\t', 'Date And Time Of Login: ', datetime.datetime.now())
-if gen_der == 'f':
-    print('\t','\t', '\t','Welcome Miss' , user_name)
-    print('\t', 'Date And Time Of Login: ', datetime.datetime.now())
+      x=int(input('Enter the designated number to proceed'))#vedanth all this you can edit
 
-sleep(3)
-clear()
+      if x==1:
 
-print('''
---------------------------------------------------------------------------------------------------
-                ______     _______  _________  _______   ______    _______   _______   _______              
-                (  __  \  (  ___  ) \__   __/ (  ___  ) (  ___ \  (  ___  ) (  ____ \ (  ____ \                    
-                | (  \  ) | (   ) |    ) (    | (   ) | | (   ) ) | (   ) | | (    \/ | (    \/                    
-                | |   ) | | (___) |    | |    | (___) | | (__/ /  | (___) | | (_____  | (__                            
-                | |   | | |  ___  |    | |    |  ___  | |  __ (   |  ___  | (_____  ) |  __)                           
-                | |   ) | | (   ) |    | |    | (   ) | | (  \ \  | (   ) |       ) | | (                                  
-                | (__/  ) | )   ( |    | |    | )   ( | | )___) ) | )   ( | /\____) | | (____/\                            
-                (______/  |/     \|    )_(    |/     \| |/ \___/  |/     \| \_______) (_______/                        
-                                                                                                                                    
-                                            Status : Conneted                                                                                       
---------------------------------------------------------------------------------------------------''')
+         a=input('Enter the team name')
 
+         for i in range(len(d)):
 
-sleep(2)
+             for j in d[i]:
 
-clear()
+                 if j==a:                         #you guys need to understand the code so pay attention to the loops and slicings or indents I have used at various place
 
-print('''--------------------------------------------------------------------------------------------------
-                ______     _______  _________  _______   ______    _______   _______   _______              
-                (  __  \  (  ___  ) \__   __/ (  ___  ) (  ___ \  (  ___  ) (  ____ \ (  ____ \                    
-                | (  \  ) | (   ) |    ) (    | (   ) | | (   ) ) | (   ) | | (    \/ | (    \/                    
-                | |   ) | | (___) |    | |    | (___) | | (__/ /  | (___) | | (_____  | (__                            
-                | |   | | |  ___  |    | |    |  ___  | |  __ (   |  ___  | (_____  ) |  __)                           
-                | |   ) | | (   ) |    | |    | (   ) | | (  \ \  | (   ) |       ) | | (                                  
-                | (__/  ) | )   ( |    | |    | )   ( | | )___) ) | )   ( | /\____) | | (____/\                            
-                (______/  |/     \|    )_(    |/     \| |/ \___/  |/     \| \_______) (_______/                        
-            
-            [A] Student_Name                                                                                        
-            [B] Student_Class                                                                                   
-            [C] Student_Admission_Number   
-            [D] Student_Contact_Number                                                                                                                                                                                                                                                                                                                                                                                                       
---------------------------------------------------------------------------------------------------''')
+                    print(j,'\n','Wins:',d[i][j][1],'\n','Loses:',d[i][j][2],'\n','Rank:',i+1)#vedanth another output you can edit 
 
+      elif x==2:
 
-if gen_der == 'M':
-    print("Just Type '--help' To Know The Commands.")
-    sleep(2)
-    print('\n')
-    print('Master', user_name)
-    a = input('Awaiting Orders --> ')
-if gen_der == 'm':
-    print("Just Type '--help' To Know The Commands.")
-    sleep(2)
-    print('\n')
-    print('Master', user_name)
-    a = input('Awaiting Orders --> ')
-if gen_der == 'F':
-    print("Just Type '--help' To Know The Commands.")
-    sleep(2)
-    print('\n')
-    print('Miss', user_name)
-    a = input('Awaiting Orders --> ')
-if gen_der == 'f':
-    print("Just Type '--help' To Know The Commands.")
-    sleep(2)
-    print('\n')
-    print('Miss', user_name)
-    a = input('Awaiting Orders --> ')
+           b=input('Enter the name of the winning team')#so saransh over here you will have to slice the team names to the first three characters as I mentioned earlier for the ranking
 
-if a == '--help':
-        if gen_der == 'M':
-            print("Master" , user_name, '''The Avaiable Commands Are:
-              [1] Create Database
-              [2] Edit Database   
-              [3] Delete Database ''')
-        if gen_der == 'm':
-            print("Master", user_name, '''The Avaiable Commands Are:
-                [1] Create Database
-                [2] Edit Database   
-                [3] Delete Database ''')
-        if gen_der == 'F':
-            print("Miss", user_name, '''The Avaiable Commands Are:
-                [1] Create Database
-                [2] Edit Database   
-                [3] Delete Database ''')
-        if gen_der == 'f':
-            print("Miss", user_name, '''The Avaiable Commands Are:
-                [1] Create Database
-                [2] Edit Database   
-                [3] Delete Database ''')
+           c=input('Enter the name of the losing team') #saransh on the info list you can the team name as another detail and display it instead of what ive chosen
 
-while True:
-    if gen_der == 'M':
-        print('Master', user_name)
-        b = int(input('Awaiting Orders --> '))
-    if gen_der == 'm':
-        print('Master', user_name)
-        b = input('Awaiting Orders --> ')
-    if gen_der == 'F':
-        print('Miss', user_name)
-        b = input('Awaiting Orders --> ')
-    if gen_der == 'f':
-        print('Miss', user_name)
-        b = input('Awaiting Orders --> ')
+           for i in range(len(d)):
 
-    if b == 1 :
-        name = input('Name Of The Database: ')
-        print('''-----------------------------------------------------------------------------------------------
-             ______     _______  _________  _______   ______    _______   _______   _______                              
-             (  __  \  (  ___  ) \__   __/ (  ___  ) (  ___ \  (  ___  ) (  ____ \ (  ____ \                                     
-             | (  \  ) | (   ) |    ) (    | (   ) | | (   ) ) | (   ) | | (    \/ | (    \/                                     
-             | |   ) | | (___) |    | |    | (___) | | (__/ /  | (___) | | (_____  | (__                                                     
-             | |   | | |  ___  |    | |    |  ___  | |  __ (   |  ___  | (_____  ) |  __)                                
-             | |   ) | | (   ) |    | |    | (   ) | | (  \ \  | (   ) |       ) | | (                                               
-             | (__/  ) | )   ( |    | |    | )   ( | | )___) ) | )   ( | /\____) | | (____/\                                 
-             (______/  |/     \|    )_(    |/     \| |/ \___/  |/     \| \_______) (_______/                                 
-                                                                                                                                        
-                    [A] Student_Name                                                                                            
-                    [B] Student_Class                                                                                                       
-                    [C] Student_Admission_Number                                                                                        
-                    [D] Student_Contact_Number
-                    [E]''', name )
-        print('-------------------------------------------------------------------------------------------------------')
-        print('\n')
-    if gen_der == 'M':
-        print('Master', user_name)
-        c = int(input('Awaiting Orders --> '))
-    if gen_der == 'm':
-        print('Master', user_name)
-        c = input('Awaiting Orders --> ')
-    if gen_der == 'F':
-        print('Miss', user_name)
-        c = input('Awaiting Orders --> ')
-    if gen_der == 'f':
-        print('Miss', user_name)
-        c = input('Awaiting Orders --> ')
-    if c == 1:
-        name1 = input('Name Of The Database: ')
-        print('''-----------------------------------------------------------------------------------------------
-                 ______     _______  _________  _______   ______    _______   _______   _______                              
-                (  __  \  (  ___  ) \__   __/ (  ___  ) (  ___ \  (  ___  ) (  ____ \ (  ____ \                                     
-                | (  \  ) | (   ) |    ) (    | (   ) | | (   ) ) | (   ) | | (    \/ | (    \/                                     
-                | |   ) | | (___) |    | |    | (___) | | (__/ /  | (___) | | (_____  | (__                                                     
-                | |   | | |  ___  |    | |    |  ___  | |  __ (   |  ___  | (_____  ) |  __)                                
-                | |   ) | | (   ) |    | |    | (   ) | | (  \ \  | (   ) |       ) | | (                                               
-                | (__/  ) | )   ( |    | |    | )   ( | | )___) ) | )   ( | /\____) | | (____/\                                 
-                (______/  |/     \|    )_(    |/     \| |/ \___/  |/     \| \_______) (_______/                                 
+               for j in d[i]:                                  #rating[1}+=100/(100+rating[-1]-rating[0])
 
-                        [A] Student_Name                                                                                            
-                        [B] Student_Class                                                                                                       
-                        [C] Student_Admission_Number                                                                                        
-                        [D] Student_Contact_Number
-                        [E]''', name)
-        print('\t' '\t' '\t' '[F]' , name1)
-        print('-------------------------------------------------------------------------------------------------------')
-    print('\n')
-    if gen_der == 'M':
-        print('Master', user_name)
-        d = int(input('Awaiting Orders --> '))
-    if gen_der == 'm':
-        print('Master', user_name)
-        d = input('Awaiting Orders --> ')
-    if gen_der == 'F':
-        print('Miss', user_name)
-        d = input('Awaiting Orders --> ')
-    if gen_der == 'f':
-        print('Miss', user_name)
-        d = input('Awaiting Orders --> ')
-    if d == 1:
-        name2 = input('Name Of The Database: ')
-        print('''-----------------------------------------------------------------------------------------------
-                     ______     _______  _________  _______   ______    _______   _______   _______                              
-                    (  __  \  (  ___  ) \__   __/ (  ___  ) (  ___ \  (  ___  ) (  ____ \ (  ____ \                                     
-                    | (  \  ) | (   ) |    ) (    | (   ) | | (   ) ) | (   ) | | (    \/ | (    \/                                     
-                    | |   ) | | (___) |    | |    | (___) | | (__/ /  | (___) | | (_____  | (__                                                     
-                    | |   | | |  ___  |    | |    |  ___  | |  __ (   |  ___  | (_____  ) |  __)                                
-                    | |   ) | | (   ) |    | |    | (   ) | | (  \ \  | (   ) |       ) | | (                                               
-                    | (__/  ) | )   ( |    | |    | )   ( | | )___) ) | )   ( | /\____) | | (____/\                                 
-                    (______/  |/     \|    )_(    |/     \| |/ \___/  |/     \| \_______) (_______/                                 
+                   if j==c:                                    #example reference to how our rating basically works
 
-                            [A] Student_Name                                                                                            
-                            [B] Student_Class                                                                                                       
-                            [C] Student_Admission_Number                                                                                        
-                            [D] Student_Contact_Number
-                            [E]''', name)
-        print('\t' '\t' '\t' '[F]', name1)
-        print('\t' '\t' '\t' '[F]', name2)
-        print('-------------------------------------------------------------------------------------------------------')
-        print('\n')
-        if gen_der == 'M':
-            print('Master', user_name)
-            e = int(input('Awaiting Orders --> '))
-        if gen_der == 'm':
-            print('Master', user_name)
-            e = input('Awaiting Orders --> ')
-        if gen_der == 'F':
-            print('Miss', user_name)
-            e = input('Awaiting Orders --> ')
-        if gen_der == 'f':
-            print('Miss', user_name)
-            e = input('Awaiting Orders --> ')
-        if e == 1:
-            name3 = input('Name Of The Database: ')
-        print('''-----------------------------------------------------------------------------------------------
-                         ______     _______  _________  _______   ______    _______   _______   _______                              
-                        (  __  \  (  ___  ) \__   __/ (  ___  ) (  ___ \  (  ___  ) (  ____ \ (  ____ \                                     
-                        | (  \  ) | (   ) |    ) (    | (   ) | | (   ) ) | (   ) | | (    \/ | (    \/                                     
-                        | |   ) | | (___) |    | |    | (___) | | (__/ /  | (___) | | (_____  | (__                                                     
-                        | |   | | |  ___  |    | |    |  ___  | |  __ (   |  ___  | (_____  ) |  __)                                
-                        | |   ) | | (   ) |    | |    | (   ) | | (  \ \  | (   ) |       ) | | (                                               
-                        | (__/  ) | )   ( |    | |    | )   ( | | )___) ) | )   ( | /\____) | | (____/\                                 
-                        (______/  |/     \|    )_(    |/     \| |/ \___/  |/     \| \_______) (_______/                                 
+                      q=d[i][j][0]                     
 
-                                [A] Student_Name                                                                                            
-                                [B] Student_Class                                                                                                       
-                                [C] Student_Admission_Number                                                                                        
-                                [D] Student_Contact_Number
-                                [E]''', name)
-        print('\t' '\t' '\t' '[F]', name1)
-        print('\t' '\t' '\t' '[F]', name2)
-        print('\t' '\t' '\t' '[F]', name3)
-        print('-------------------------------------------------------------------------------------------------------')
-        print('\n')
-        if gen_der == 'M':
-            print('Master', user_name)
-            f = int(input('Awaiting Orders --> '))
-        if gen_der == 'm':
-            print('Master', user_name)
-            f = input('Awaiting Orders --> ')
-        if gen_der == 'F':
-            print('Miss', user_name)
-            f = input('Awaiting Orders --> ')
-        if gen_der == 'f':
-            print('Miss', user_name)
-            f = input('Awaiting Orders --> ')
-        if f == 1:
-            name4 = input('Name Of The Database: ')
-            print('''-----------------------------------------------------------------------------------------------
-                         ______     _______  _________  _______   ______    _______   _______   _______                              
-                        (  __  \  (  ___  ) \__   __/ (  ___  ) (  ___ \  (  ___  ) (  ____ \ (  ____ \                                     
-                        | (  \  ) | (   ) |    ) (    | (   ) | | (   ) ) | (   ) | | (    \/ | (    \/                                     
-                        | |   ) | | (___) |    | |    | (___) | | (__/ /  | (___) | | (_____  | (__                                                     
-                        | |   | | |  ___  |    | |    |  ___  | |  __ (   |  ___  | (_____  ) |  __)                                
-                        | |   ) | | (   ) |    | |    | (   ) | | (  \ \  | (   ) |       ) | | (                                               
-                        | (__/  ) | )   ( |    | |    | )   ( | | )___) ) | )   ( | /\____) | | (____/\                                 
-                        (______/  |/     \|    )_(    |/     \| |/ \___/  |/     \| \_______) (_______/                                 
+               for j in d[i]:      
 
-                                [A] Student_Name                                                                                            
-                                [B] Student_Class                                                                                                       
-                                [C] Student_Admission_Number                                                                                        
-                                [D] Student_Contact_Number
-                                [E]''', name)
-            print('\t' '\t' '\t' '[F]', name1)
-            print('\t' '\t' '\t' '[F]', name2)
-            print('\t' '\t' '\t' '[F]', name3)
-            print('\t' '\t' '\t' '[F]', name3)
-            print('-------------------------------------------------------------------------------------------------------')
-    if gen_der == 'M':
-        print('Master', user_name)
-        g = int(input('Awaiting Orders --> '))
-    if gen_der == 'm':
-        print('Master', user_name)
-        g = input('Awaiting Orders --> ')
-    if gen_der == 'F':
-        print('Miss', user_name)
-        g = input('Awaiting Orders --> ')
-    if gen_der == 'f':
-        print('Miss', user_name)
-        g = input('Awaiting Orders --> ')
-    
+                   if j==b:
 
+                      d[i][j][0]=d[i][j][0]+100/(100+d[i][j][0]-q)
 
+           print('Record updated')          
 
+      elif x==3:
 
+           e=input('Enter the new team name')#again saransh as I said slicing will lead to better data validation, will become more user friendly
 
+           f=int(input('Enter the team wins'))
 
+           g=int(input('Enter the team loses'))
 
+           d.append({e:[100,f,g]})
 
+           for i in range(len(d)):     #vedanth another set of outputs
 
+               for j in d[i]:         
 
+                   if j==e:
 
+                      print(j,'\n','Wins:',d[i][j][1],'\n','Loses:',d[i][j][2],'\n','Rank:',i+1)
 
+                      print('New record has been updated with default team rating of 100')
 
+      elif x==4:
 
+           for i in range(len(d)):
 
+               for j in range(len(d)):
 
+                   if d[i][str(d[i].keys())[12:15]]>d[j][str(d[j].keys())[12:15]]:
 
+                      d[i],d[j]=d[j],d[i]          #this code is called bubble sorting I have given an example code beneath
 
+           print('Rankings')                    #this is a set of simple yet complicated code
 
+           for i in range(len(d)):                   #lots of slicing going on refer to the code below                  
+
+               print(i+1,str(d[i].keys())[12:15])
+
+      i=input('Return to menu? y/n')
+
+ 
+
+ 
+
+ 
+
+#%%
+
+d={'Ind':1}
+
+x=d.keys()              #this is a small reference to the way I have sliced to help you understand
+
+print(str(x)[12:15])
+
+ 
+
+ 
+
+#%%
+
+x=[23,4,5,1]
+
+for i in range(len(x)):                #bubble sorting
+
+    for j in range(len(x)):
+
+        if x[i]>x[j]:
+
+           x[i],x[j]=x[j],x[i]
+
+print(x)          
