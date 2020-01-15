@@ -19,6 +19,8 @@ print('\n')
 pass_word = input('Password: ')
 print('\n')
 gen_der = input('Gender (M) , (F): ')
+while gen_der not in 'MmFf':
+    gen_der = input("Please input gender only as M, m, F or f: ")
 
 # def clear1():                            # Uncomment This When Using Spyder And Comment The clear() Function.
 #      from IPython import get_ipython
@@ -99,55 +101,29 @@ while proceed in 'Yy':
     
     ranker()
 
-    if gen_der == 'M' or gen_der == 'm':
-        print("Just Type '--help' To Know The Commands.")
-        sleep(0.5)
-        print('\n')
+    print("Just Type '--help' To Know The Commands.")
+    sleep(0.5)
+    print('\n')
+    if gen_der in 'Mm':
         print('Master', user_name)
-        cmd_num = input('Awaiting Orders --> ')
-
-    if gen_der == 'F' or gen_der == 'f':
-        print("Just Type '--help' To Know The Commands.")
-        sleep(0.5)
-        print('\n')
+    else:
         print('Miss', user_name)
-        cmd_num = input('Awaiting Orders --> ')
+    cmd_num = input('Awaiting Orders --> ')
 
     if cmd_num == '--help':
-        if gen_der == 'M' or gen_der == 'm':
-            print('\n')
-            print("Master", user_name, "The Avaiable Commands Are: ")
-            print('''
-            [1] View Teams
-            [2] View Team Record
-            [3] Add A Match Result   
-            [4] Add A New Team Record 
-            [5] View Overall Team Ranking ''')
-
-
-        if gen_der == 'F' or gen_der == 'f':
-            print('\n')
-            print("Miss", user_name, "The Avaiable Commands Are: ")
-            print('''
-            [1] View Teams
-            [2] View Team Record
-            [3] Add A Match Result   
-            [4] Add A New Team Record 
-            [5] View Overall Team Ranking ''')
-
-
-    if gen_der == 'M' or gen_der == 'm':
-        sleep(0.5)
         print('\n')
-        print('Master', user_name)
-        cmd_num = input('Awaiting Orders ---> ')
-    if gen_der == 'F' or gen_der == 'f':
-        sleep(0.5)
-        print('\n')
-        print('Miss', user_name)
-        cmd_num = input('Awaiting Orders ---> ')
+        if gen_der in 'Mm':
+            print("Master", user_name, "The Available Commands Are: ")
+        else:
+            print("Miss", user_name, "The Available Commands Are: ")
+        print('''
+        [1] View Teams
+        [2] View Team Record
+        [3] Add A Match Result   
+        [4] Add A New Team Record 
+        [5] View Overall Team Ranking ''')
 
-    while not int(cmd_num) in [1, 2, 3, 4, 5] and not cmd_num == '--help':
+    while not cmd_num in ['1', '2', '3', '4', '5', '--help']:
         cmd_num = input("Re-enter command with a designated number only. Type '--help' to know the commands: ")
 
     if cmd_num == 1:
@@ -250,7 +226,7 @@ while proceed in 'Yy':
             print('\n', team[0], '\t', team[1], '\t', Teams.index(team))
 
     print('\n')
-    proceed = input('Return To Menu [Y]es Or [Enter] No: ')
+    proceed = input('Return To Menu [Y]es Or [N]o: ')
     print('\n')
 
     if gen_der == 'M' or gen_der == 'm':
