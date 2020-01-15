@@ -108,7 +108,10 @@ while proceed in 'Yy':
         print('Master', user_name)
     else:
         print('Miss', user_name)
+        
     cmd_num = input('Awaiting Orders --> ')
+    while not cmd_num in ['1', '2', '3', '4', '5', '--help']:
+        cmd_num = input("Re-enter command with a designated number only. Type '--help' to know the commands: ")
 
     if cmd_num == '--help':
         print('\n')
@@ -122,11 +125,11 @@ while proceed in 'Yy':
         [3] Add A Match Result   
         [4] Add A New Team Record 
         [5] View Overall Team Ranking ''')
+        cmd_num = input('Awaiting Orders --> ')
+        while not cmd_num in ['1', '2', '3', '4', '5', '--help']:
+            cmd_num = input("Re-enter command with a designated number only. Type '--help' to know the commands: ")
 
-    while not cmd_num in ['1', '2', '3', '4', '5', '--help']:
-        cmd_num = input("Re-enter command with a designated number only. Type '--help' to know the commands: ")
-
-    if cmd_num == 1:
+    if cmd_num == '1':
          clear()
          # clear1()
          print('\n')
@@ -146,7 +149,7 @@ while proceed in 'Yy':
                                     | [J] Afghanistan   | 
                                     +-------------------+ ''')
 
-    elif cmd_num == 2:
+    elif cmd_num == '2':
         clear()
         # clear1()
         print('''
@@ -165,7 +168,7 @@ while proceed in 'Yy':
             print('\n')
             print("Typo Error, Or Entered Team Not In List. Please Try Again.")
 
-    elif cmd_num == 3:
+    elif cmd_num == '3':
         clear()
         # clear1()
         print('''
@@ -195,7 +198,7 @@ while proceed in 'Yy':
         print('\n')
         print('Record Updated')
 
-    elif cmd_num == 4:
+    elif cmd_num == '4':
         clear()
         # clear1()
         print('''
@@ -209,49 +212,34 @@ while proceed in 'Yy':
         losses = int(input('Number Of Loss: '))
         print('\n')
 
-        Teams.append([team, 100, wins, losses, len(Teams) + 1])                    ## The new team would be assigned the last rank.
+        Teams.append([team, 100, wins, losses])                    
 
-        print(team,'\n','Wins:', wins,'\n','Losses:', losses,'\n','Rank:', len(Teams) + 1)
         print('\n','Record Updated With Default Team Rating Of 100')
 
-    elif cmd_num == 5:
+    elif cmd_num == '5':
         clear()
         # clear1()
         print('''
-                                        +--------------------+
-                                        |   Ranking System   |                                 
-                                        +--------------------+ ''')                                         ##Just Have A Looks At Ths Arkesh Cause The Indent Is Not Right For Countries Which Have Smaller Name Like India The Indent Is Not Right.
+                                        +-----------------+
+                                        |   Leaderboard   |                                 
+                                        +-----------------+ ''')                                         ##Just Have A Looks At Ths Arkesh Cause The Indent Is Not Right For Countries Which Have Smaller Name Like India The Indent Is Not Right.
 
         for team in Teams:
-            print('\n', team[0], '\t', team[1], '\t', Teams.index(team))
+            print('\n', Teams.index(team), '\t', team[0], '\t', team[1])
 
     print('\n')
     proceed = input('Return To Menu [Y]es Or [N]o: ')
     print('\n')
 
-    if gen_der == 'M' or gen_der == 'm':
-        if proceed == 'Y' or proceed == 'y':
+    if proceed in 'Yy':
+        if gen_der in 'Mm':
             print('Sure, Master', user_name, '!')
-            sleep(0.5)
-            clear()
-            # clear1()
-            print('''--------------------------------------------------------------------------------------------------
-
-
-                        ___                                              _                      _                    
-                         |  ._ _|_  _  ._ ._   _. _|_ o  _  ._   _. |   /  ._ o  _ |   _ _|_   /   _      ._   _ o |                        
-                        _|_ | | |_ (/_ |  | | (_|  |_ | (_) | | (_| |   \_ |  | (_ |< (/_ |_   \_ (_) |_| | | (_ | |    
-
-
-            --------------------------------------------------------------------------------------------------''')
-
-    if gen_der == 'F' or gen_der == 'f':
-        if proceed == 'Y' or proceed == 'y':
+        else:
             print('Sure, Miss', user_name, '!')
-            sleep(0.5)
-            clear()
-            # clear1()
-            print('''--------------------------------------------------------------------------------------------------
+        sleep(0.5)
+        clear()
+        # clear1()
+        print('''--------------------------------------------------------------------------------------------------
 
 
                     ___                                              _                      _                    
@@ -259,5 +247,5 @@ while proceed in 'Yy':
                     _|_ | | |_ (/_ |  | | (_|  |_ | (_) | | (_| |   \_ |  | (_ |< (/_ |_   \_ (_) |_| | | (_ | |    
 
 
-             --------------------------------------------------------------------------------------------------''')
+        --------------------------------------------------------------------------------------------------''')
 
