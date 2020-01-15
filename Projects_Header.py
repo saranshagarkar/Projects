@@ -30,7 +30,7 @@ def clear():
    if gen_der == 'F' or 'f':
        y = system('clear')             # Just Change The 'Clear' To 'Cls' When Using In Windows.
 
-sleep(1)
+sleep(0.5)
 
 # clear1()
 
@@ -43,7 +43,7 @@ if gen_der == 'F' or gen_der == 'f':
     print('\t', '\t', '\t', 'Welcome Miss', user_name)
     print('\t', 'Date And Time Of Login: ', datetime.datetime.now())
 
-sleep(3)
+sleep(0.5)
 
 # clear1()
 
@@ -65,7 +65,7 @@ print('''
                                                                                    
 --------------------------------------------------------------------------------------------------''')
 
-sleep(2)
+sleep(0.5)
 
 # clear1()
 
@@ -80,38 +80,40 @@ print('''-----------------------------------------------------------------------
     
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 --------------------------------------------------------------------------------------------------''')
-def opening_lines():
-    global b
-    if gen_der == 'M' or gen_der == 'm':
-        print('\n')
-        print('Master', user_name)
-        b = int(input('Awaiting Orders --> '))
-    if gen_der == 'F' or gen_der == 'f':
-        print('\n')
-        print('Miss', user_name)
-        b = int(input('Awaiting Orders --> '))
+        
+def ranker():
+    order = False
+    while not order:
+        for i in range(len(Teams) - 1):
+            if Teams[i][1] > Teams[i + 1][1]:
+                Teams[i], Teams[i + 1] = Teams[i + 1], Teams[i]
+                break
+        else:
+            order = True
 
-Teams = [['India', 100, 8, 2, 1], ['Australia', 100, 6, 4, 2], ['South Africa', 100, 5, 5, 3], ['New Zealand', 100, 4, 6, 4], ['England', 100, 6, 4, 5], ['Pakistan', 100, 7, 3, 6], ['Sri Lanka', 100, 5, 5, 7], ['Bangladesh', 100, 7, 3, 8], ['West Indies', 100, 7, 2, 9], ['Afghanistan', 100, 4, 6, 10]]
+Teams = [['India', 100, 8, 2], ['Australia', 100, 6, 4], ['South Africa', 100, 5, 5], ['New Zealand', 100, 4, 6], ['England', 100, 6, 4], ['Pakistan', 100, 7, 3], ['Sri Lanka', 100, 5, 5], ['Bangladesh', 100, 7, 3], ['West Indies', 100, 7, 2], ['Afghanistan', 100, 4, 6]]
 
 proceed = 'Y'
 
 while proceed in 'Yy':
+    
+    ranker()
 
     if gen_der == 'M' or gen_der == 'm':
         print("Just Type '--help' To Know The Commands.")
-        sleep(2)
+        sleep(0.5)
         print('\n')
         print('Master', user_name)
-        a = input('Awaiting Orders --> ')
+        cmd_num = input('Awaiting Orders --> ')
 
     if gen_der == 'F' or gen_der == 'f':
         print("Just Type '--help' To Know The Commands.")
-        sleep(2)
+        sleep(0.5)
         print('\n')
         print('Miss', user_name)
-        a = input('Awaiting Orders --> ')
+        cmd_num = input('Awaiting Orders --> ')
 
-    if a == '--help':
+    if cmd_num == '--help':
         if gen_der == 'M' or gen_der == 'm':
             print('\n')
             print("Master", user_name, "The Avaiable Commands Are: ")
@@ -135,18 +137,18 @@ while proceed in 'Yy':
 
 
     if gen_der == 'M' or gen_der == 'm':
-        sleep(2)
+        sleep(0.5)
         print('\n')
         print('Master', user_name)
-        cmd_num = int(input('Awaiting Orders ---> '))
+        cmd_num = input('Awaiting Orders ---> ')
     if gen_der == 'F' or gen_der == 'f':
-        sleep(2)
+        sleep(0.5)
         print('\n')
         print('Miss', user_name)
-        cmd_num = int(input('Awaiting Orders ---> '))
+        cmd_num = input('Awaiting Orders ---> ')
 
-    while not cmd_num in [1, 2, 3, 4, 5]:
-        cmd_num = int(input("Re-enter command with a designated number only: "))
+    while not int(cmd_num) in [1, 2, 3, 4, 5] and not cmd_num == '--help':
+        cmd_num = input("Re-enter command with a designated number only. Type '--help' to know the commands: ")
 
     if cmd_num == 1:
          clear()
@@ -180,7 +182,7 @@ while proceed in 'Yy':
         for item in Teams:
             if team.lower() == item[0].lower():
                 print('\n')
-                print(Teams[Teams.index(item)][0], '\n', 'Wins:', Teams[Teams.index(item)][2], '\n', '\n', 'Losses:', Teams[Teams.index(item)][3], '\n', '\n', 'Rank:', Teams[Teams.index(item)][4], '\n')
+                print(Teams[Teams.index(item)][0], '\n', 'Wins:', Teams[Teams.index(item)][2], '\n', '\n', 'Losses:', Teams[Teams.index(item)][3], '\n', '\n', 'Rank:', Teams.index(item), '\n')
                 print('\n')
                 break
         else:
@@ -245,7 +247,7 @@ while proceed in 'Yy':
                                         +--------------------+ ''')                                         ##Just Have A Looks At Ths Arkesh Cause The Indent Is Not Right For Countries Which Have Smaller Name Like India The Indent Is Not Right.
 
         for team in Teams:
-            print('\n', team[0], '\t', team[1], '\t', team[4])
+            print('\n', team[0], '\t', team[1], '\t', Teams.index(team))
 
     print('\n')
     proceed = input('Return To Menu [Y]es Or [Enter] No: ')
@@ -254,7 +256,7 @@ while proceed in 'Yy':
     if gen_der == 'M' or gen_der == 'm':
         if proceed == 'Y' or proceed == 'y':
             print('Sure, Master', user_name, '!')
-            sleep(2)
+            sleep(0.5)
             clear()
             # clear1()
             print('''--------------------------------------------------------------------------------------------------
@@ -270,7 +272,7 @@ while proceed in 'Yy':
     if gen_der == 'F' or gen_der == 'f':
         if proceed == 'Y' or proceed == 'y':
             print('Sure, Miss', user_name, '!')
-            sleep(2)
+            sleep(0.5)
             clear()
             # clear1()
             print('''--------------------------------------------------------------------------------------------------
