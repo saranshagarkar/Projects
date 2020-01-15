@@ -87,13 +87,13 @@ def ranker():
     order = False
     while not order:
         for i in range(len(Teams) - 1):
-            if Teams[i][1] > Teams[i + 1][1]:
+            if Teams[i][1] < Teams[i + 1][1]:
                 Teams[i], Teams[i + 1] = Teams[i + 1], Teams[i]
                 break
         else:
             order = True
 
-Teams = [['India', 100, 8, 2], ['Australia', 100, 6, 4], ['South Africa', 100, 5, 5], ['New Zealand', 100, 4, 6], ['England', 100, 6, 4], ['Pakistan', 100, 7, 3], ['Sri Lanka', 100, 5, 5], ['Bangladesh', 100, 7, 3], ['West Indies', 100, 7, 2], ['Afghanistan', 100, 4, 6]]
+Teams = [['India', 228, 8, 2], ['Australia', 220, 6, 4], ['South Africa', 198, 5, 5], ['New Zealand', 232, 4, 6], ['England', 233, 6, 4], ['Pakistan', 186, 7, 3], ['Sri Lanka', 179, 5, 5], ['Bangladesh', 171, 7, 3], ['West Indies', 170, 7, 2], ['Afghanistan', 150, 4, 6]]
 
 proceed = 'Y'
 
@@ -186,7 +186,7 @@ while proceed in 'Yy':
             continue
         print('\n')
         winner = input('Winning Team: ')
-        for item in Teams.keys():
+        for item in Teams:
             if winner.lower() == Teams[Teams.index(item)][0].lower():
                 Teams[Teams.index(item)][2] += 1
                 Teams[Teams.index(item)][1] += 100 / (100 + Teams[Teams.index(item)][1] - rating_loser)
@@ -225,7 +225,7 @@ while proceed in 'Yy':
                                         +-----------------+ ''')                                         ##Just Have A Looks At Ths Arkesh Cause The Indent Is Not Right For Countries Which Have Smaller Name Like India The Indent Is Not Right.
 
         for team in Teams:
-            print('\n', Teams.index(team), '\t', team[0], '\t', team[1])
+            print('\n', Teams.index(team) + 1, '\t', team[0], '\t', team[1])
 
     print('\n')
     proceed = input('Return To Menu [Y]es Or [N]o: ')
