@@ -177,10 +177,10 @@ while proceed in 'Yy':
                  +--------------------+ ''')                        
         print('\n')
         team = input('Enter Team Name: ')
-        for item in Teams.keys():
-            if team.lower() == item.lower():
+        for item in Teams:
+            if team.lower() == item[0].lower():
                 print('\n')
-                print(item, '\n', 'Wins:', Teams[item][1], '\n', '\n', 'Losses:', Teams[item][2], '\n', '\n', 'Rank:', Teams[item][3], '\n')
+                print(Teams[Teams.index(item)][0], '\n', 'Wins:', Teams[Teams.index(item)][2], '\n', '\n', 'Losses:', Teams[Teams.index(item)][3], '\n', '\n', 'Rank:', Teams[Teams.index(item)][4], '\n')
                 print('\n')
                 break
         else:
@@ -195,10 +195,10 @@ while proceed in 'Yy':
                          |     Match Result   |
                          +--------------------+ ''')
         loser = input('Loosing Team: ')
-        for item in Teams.keys():
-            if loser.lower() == item.lower():
-                rating_loser = Teams[item][0]
-                Teams[item][2] += 1
+        for item in Teams:
+            if loser.lower() == Teams[Teams.index(item)][0].lower():
+                rating_loser = Teams[Teams.index(item)][1]
+                Teams[Teams.index(item)][3] += 1
                 break
         else:
             print("Typo Error, Or Entered Team Not In List. Please Try Again.")
@@ -206,15 +206,16 @@ while proceed in 'Yy':
         print('\n')
         winner = input('Winning Team: ')
         for item in Teams.keys():
-            if winner.lower() == item.lower():
-                Teams[item][1] += 1
-                Teams[item][0] += 100 / (100 + Teams[item][0] - rating_loser)
+            if winner.lower() == Teams[Teams.index(item)][0].lower():
+                Teams[Teams.index(item)][2] += 1
+                Teams[Teams.index(item)][1] += 100 / (100 + Teams[Teams.index(item)][1] - rating_loser)
                 break
         else:
             print("Typo Error, Or Entered Team Not In List. Please Try Again.")
             continue
-            print('\n')
-            print('Record Updated')
+        
+        print('\n')
+        print('Record Updated')
 
     elif cmd_num == 4:
         clear()
@@ -230,7 +231,7 @@ while proceed in 'Yy':
         losses = int(input('Number Of Loss: '))
         print('\n')
 
-        Teams[team] = [100, wins, losses, len(Teams) + 1]                       ## The new team would be assigned the last rank.
+        Teams.append([team, 100, wins, losses, len(Teams) + 1])                    ## The new team would be assigned the last rank.
 
         print(team,'\n','Wins:', wins,'\n','Losses:', losses,'\n','Rank:', len(Teams) + 1)
         print('\n','Record Updated With Default Team Rating Of 100')
@@ -243,12 +244,8 @@ while proceed in 'Yy':
                                         |   Ranking System   |                                 
                                         +--------------------+ ''')                                         ##Just Have A Looks At Ths Arkesh Cause The Indent Is Not Right For Countries Which Have Smaller Name Like India The Indent Is Not Right.
 
-        rank_ctr = 1
-        while rank_ctr <= len(Teams):
-            for team, team_data in Teams.items():
-                if team_data[3] == rank_ctr:
-                    print('\n', rank_ctr, '\t', team, '\t', Teams[team][0])
-            rank_ctr += 1
+        for team in Teams:
+            print('\n', team[0], '\t', team[1], '\t', team[4])
 
     print('\n')
     proceed = input('Return To Menu [Y]es Or [Enter] No: ')
@@ -256,7 +253,7 @@ while proceed in 'Yy':
 
     if gen_der == 'M' or gen_der == 'm':
         if proceed == 'Y' or proceed == 'y':
-            print('Sure Master!', user_name)
+            print('Sure, Master', user_name, '!')
             sleep(2)
             clear()
             # clear1()
@@ -272,7 +269,7 @@ while proceed in 'Yy':
 
     if gen_der == 'F' or gen_der == 'f':
         if proceed == 'Y' or proceed == 'y':
-            print('Sure Miss!', user_name)
+            print('Sure, Miss', user_name, '!')
             sleep(2)
             clear()
             # clear1()
