@@ -1,70 +1,288 @@
-print('Welcome')#vedanth front end belongs to you so make it beautiful, all the outputs and display presentation is also your work
+import datetime
+from os import system
+from time import sleep
 
-## Guys - Apart from the variables to store the data and the improvement on the loop flow, I've changed the variable names from a,b,c,d, etc.
-## to names that would be easier to understand, should we need to review the code later on, or if Laxmi ma'am wants to just glance through
+print('''
+----------------------------------------------------------------------------------------------------------------------------------------------------                 
+ _____                                        _                   _     ______       _       _                   ______                        _ _ 
+(_____)      _                           _   (_)                 | |   / _____)     (_)     | |         _       / _____)                      (_) |
+   _   ____ | |_  ____  ____ ____   ____| |_  _  ___  ____   ____| |  | /       ____ _  ____| |  _ ____| |_    | /      ___  _   _ ____   ____ _| |
+  | | |  _ \|  _)/ _  )/ ___)  _ \ / _  |  _)| |/ _ \|  _ \ / _  | |  | |      / ___) |/ ___) | / ) _  )  _)   | |     / _ \| | | |  _ \ / ___) | |
+ _| |_| | | | |_( (/ /| |   | | | ( ( | | |__| | |_| | | | ( ( | | |  | \_____| |   | ( (___| |< ( (/ /| |__   | \____| |_| | |_| | | | ( (___| | |
+(_____)_| |_|\___)____)_|   |_| |_|\_||_|\___)_|\___/|_| |_|\_||_|_|   \______)_|   |_|\____)_| \_)____)\___)   \______)___/ \____|_| |_|\____)_|_|           
+                        
+                                                        By: Arkesh Choudhary , Saransh Agarkar , Vedanth T. Sreenivasan                                                         
+_____________________________________________________________________________________________________________________________________________________''')
+print('\n')
+user_name = input('Login ID: ')
+print('\n')
+pass_word = input('Password: ')
+print('\n')
+gen_der = input('Gender (M) , (F): ')
 
-Teams = {'India':[100, 0, 0, 1], 'Australia':[100, 0, 0, 2], 'South Africa':[100, 0, 0, 3], 'New Zealand':[100, 0, 0, 4], 'England':[100, 0, 0, 5], 'Pakistan':[100, 0, 0, 6], 'Sri Lanka':[100, 0, 0, 7], 'Bangladesh':[100, 0, 0, 8], 'West Indies':[100, 0, 0, 9], 'Afghanistan':[100, 0, 0, 10]}
+# def clear1():                            # Uncomment This When Using Spyder And Comment The clear() Function.
+#      from IPython import get_ipython
+#      get_ipython().magic('clear')
+
+def clear():
+   if gen_der == 'M' or 'm':
+      X = system('clear')              # Just Change The 'Clear' To 'Cls' When Using In Windows.
+   if gen_der == 'F' or 'f':
+       y = system('clear')             # Just Change The 'Clear' To 'Cls' When Using In Windows.
+
+sleep(1)
+
+# clear1()
+
+clear()
+
+if gen_der == 'M' or gen_der == 'm':
+    print('\t','\t', '\t', 'Welcome Master' , user_name)
+    print('\t', 'Date And Time Of Login: ', datetime.datetime.now())
+if gen_der == 'F' or gen_der == 'f':
+    print('\t', '\t', '\t', 'Welcome Miss', user_name)
+    print('\t', 'Date And Time Of Login: ', datetime.datetime.now())
+
+sleep(3)
+
+# clear1()
+
+clear()
+
+print('''
+--------------------------------------------------------------------------------------------------
+                                       __      __                                  
+                                 |    /  `    /  `                                 
+                                 |    \__,    \__,                                 
+                                                                                   
+                          __       ___       __        __   ___                        
+                         |  \  /\   |   /\  |__)  /\  /__` |__                         
+                         |__/ /~~\  |  /~~\ |__) /~~\ .__/ |___                        
+                                                                                   
+      __  ___      ___       __          __   __             ___  __  ___  ___  __  
+     /__`  |   /\   |  |  | /__`    .   /  ` /  \ |\ | |\ | |__  /  `  |  |__  |  \ 
+     .__/  |  /~~\  |  \__/ .__/    .   \__, \__/ | \| | \| |___ \__,  |  |___ |__/ 
+                                                                                   
+--------------------------------------------------------------------------------------------------''')
+
+sleep(2)
+
+# clear1()
+
+clear()
+
+print('''--------------------------------------------------------------------------------------------------
+    
+    
+        ___                                              _                      _                    
+         |  ._ _|_  _  ._ ._   _. _|_ o  _  ._   _. |   /  ._ o  _ |   _ _|_   /   _      ._   _ o |                        
+        _|_ | | |_ (/_ |  | | (_|  |_ | (_) | | (_| |   \_ |  | (_ |< (/_ |_   \_ (_) |_| | | (_ | |    
+    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+--------------------------------------------------------------------------------------------------''')
+def opening_lines():
+    global b
+    if gen_der == 'M' or gen_der == 'm':
+        print('\n')
+        print('Master', user_name)
+        b = int(input('Awaiting Orders --> '))
+    if gen_der == 'F' or gen_der == 'f':
+        print('\n')
+        print('Miss', user_name)
+        b = int(input('Awaiting Orders --> '))
+
+Teams = [['India', 100, 8, 2, 1], ['Australia', 100, 6, 4, 2], ['South Africa', 100, 5, 5, 3], ['New Zealand', 100, 4, 6, 4], ['England', 100, 6, 4, 5], ['Pakistan', 100, 7, 3, 6], ['Sri Lanka', 100, 5, 5, 7], ['Bangladesh', 100, 7, 3, 8], ['West Indies', 100, 7, 2, 9], ['Afghanistan', 100, 4, 6, 10]]
+
 proceed = 'Y'
 
 while proceed in 'Yy':
-    print ('Select the designated number to the command','\n','1 View the record of a team','\n','2 Input a match result','\n','3 Enter a new team record','\n','4 View overall rankings')
-    cmd_num = int(input('Enter the designated number to proceed: '))#vedanth all this you can edit
+
+    if gen_der == 'M' or gen_der == 'm':
+        print("Just Type '--help' To Know The Commands.")
+        sleep(2)
+        print('\n')
+        print('Master', user_name)
+        a = input('Awaiting Orders --> ')
+
+    if gen_der == 'F' or gen_der == 'f':
+        print("Just Type '--help' To Know The Commands.")
+        sleep(2)
+        print('\n')
+        print('Miss', user_name)
+        a = input('Awaiting Orders --> ')
+
+    if a == '--help':
+        if gen_der == 'M' or gen_der == 'm':
+            print('\n')
+            print("Master", user_name, "The Avaiable Commands Are: ")
+            print('''
+            [1] View Teams
+            [2] View Team Record
+            [3] Add A Match Result   
+            [4] Add A New Team Record 
+            [5] View Overall Team Ranking ''')
+
+
+        if gen_der == 'F' or gen_der == 'f':
+            print('\n')
+            print("Miss", user_name, "The Avaiable Commands Are: ")
+            print('''
+            [1] View Teams
+            [2] View Team Record
+            [3] Add A Match Result   
+            [4] Add A New Team Record 
+            [5] View Overall Team Ranking ''')
+
+
+    if gen_der == 'M' or gen_der == 'm':
+        sleep(2)
+        print('\n')
+        print('Master', user_name)
+        cmd_num = int(input('Awaiting Orders ---> '))
+    if gen_der == 'F' or gen_der == 'f':
+        sleep(2)
+        print('\n')
+        print('Miss', user_name)
+        cmd_num = int(input('Awaiting Orders ---> '))
+
+    while not cmd_num in [1, 2, 3, 4, 5]:
+        cmd_num = int(input("Re-enter command with a designated number only: "))
 
     if cmd_num == 1:
-        team = input('Enter the team name: ')
-        for item in Teams.keys():
-            if team.lower() == item.lower():
-                print(item,'\n','Wins:', Teams[item][1], '\n', 'Losses:', Teams[item][2],'\n','Rank:', Teams[item][3])#vedanth another output you can edit 
-                break
-        else:
-            print("It seems there was a typing error, or the team you've entered isn't in our list. Try again.")
+         clear()
+         # clear1()
+         print('\n')
+         print('''
+                                    +-------------------+
+                                    |       Teams       |
+                                    +-------------------+
+                                    | [A] India         |    
+                                    | [B] Australia     |    
+                                    | [C] South Africa  |        
+                                    | [D] New Zealand   |        
+                                    | [E] England       |        
+                                    | [F] Pakistan      |        
+                                    | [G] Sri Lanka     |        
+                                    | [H] Bangladesh    |            
+                                    | [I] West Indies   |            
+                                    | [J] Afghanistan   | 
+                                    +-------------------+ ''')
 
     elif cmd_num == 2:
-        loser = input('Enter the name of the losing team: ')
+        clear()
+        # clear1()
+        print('''
+                 +--------------------+
+                 | Team Overall Stats |
+                 +--------------------+ ''')                        
+        print('\n')
+        team = input('Enter Team Name: ')
+        for item in Teams.keys():
+            if team.lower() == item.lower():
+                print('\n')
+                print(item, '\n', 'Wins:', Teams[item][1], '\n', '\n', 'Losses:', Teams[item][2], '\n', '\n', 'Rank:', Teams[item][3], '\n')
+                print('\n')
+                break
+        else:
+            print('\n')
+            print("Typo Error, Or Entered Team Not In List. Please Try Again.")
+
+    elif cmd_num == 3:
+        clear()
+        # clear1()
+        print('''
+                         +--------------------+
+                         |     Match Result   |
+                         +--------------------+ ''')
+        loser = input('Loosing Team: ')
         for item in Teams.keys():
             if loser.lower() == item.lower():
                 rating_loser = Teams[item][0]
-                Team[item][2] += 1
+                Teams[item][2] += 1
                 break
         else:
-            print("It seems there was a typing error, or the team you've entered isn't in our list.")    
-            
-        winner = input('Enter the name of the winning team: ')
+            print("Typo Error, Or Entered Team Not In List. Please Try Again.")
+            continue
+        print('\n')
+        winner = input('Winning Team: ')
         for item in Teams.keys():
             if winner.lower() == item.lower():
-                Team[item][1] += 1
-                Teams[item][0] += 100/(100 + Teams[item][0] - rating_loser)
+                Teams[item][1] += 1
+                Teams[item][0] += 100 / (100 + Teams[item][0] - rating_loser)
                 break
         else:
-            print("It seems there was a typing error, or the team you've entered isn't in our list.")   
-        
-        print('Record updated')          
+            print("Typo Error, Or Entered Team Not In List. Please Try Again.")
+            continue
+            print('\n')
+            print('Record Updated')
 
-    elif cmd_num == 3:
-    
-        team = input('Enter the new team name')
-        wins = int(input('Enter the team wins'))
-        losses = int(input('Enter the team loses'))
-        
-        Teams[team] = [100, wins, losses, len(Teams) + 1]                       ## The new team would be assigned the last rank. (This comment should be left in the final code of the project too, except this sentence in the bracket.)
-        
-        print(team,'\n','Wins:', wins,'\n','Loses:', losses,'\n','Rank:', len(Teams) + 1) #vedanth another set of outputs
-        print('\n','New record has been updated with default team rating of 100')
-    
     elif cmd_num == 4:
-    
-        for i in range(len(d)):
-        
-            for j in range(len(d)):
-            
-               if d[i][str(d[i].keys())[12:15]][0]>d[j][str(d[j].keys())[12:15]][0]:
-            
-                  d[i],d[j]=d[j],d[i]          #this code is called bubble sorting I have given an example code beneath
+        clear()
+        # clear1()
+        print('''
+                                +--------------------+
+                                |   Adding New Team  |
+                                +--------------------+ ''')
+        team = input('New Team Name: ')
+        print('\n')
+        wins = int(input('Number Of Wins: '))
+        print('\n')
+        losses = int(input('Number Of Loss: '))
+        print('\n')
 
-        print('Rankings')                    #this is a set of simple yet complicated code
-        
-        for i in range(len(d)):                   #lots of slicing going on refer to the code below                  
-        
-            print(i+1,str(d[i].keys())[12:15],d[i][str(d[i].keys())[12:15]][0])
-    
-    proceed = input('Return to menu? y/n: ')
+        Teams[team] = [100, wins, losses, len(Teams) + 1]                       ## The new team would be assigned the last rank.
+
+        print(team,'\n','Wins:', wins,'\n','Losses:', losses,'\n','Rank:', len(Teams) + 1)
+        print('\n','Record Updated With Default Team Rating Of 100')
+
+    elif cmd_num == 5:
+        clear()
+        # clear1()
+        print('''
+                                        +--------------------+
+                                        |   Ranking System   |                                 
+                                        +--------------------+ ''')                                         ##Just Have A Looks At Ths Arkesh Cause The Indent Is Not Right For Countries Which Have Smaller Name Like India The Indent Is Not Right.
+
+        rank_ctr = 1
+        while rank_ctr <= len(Teams):
+            for team, team_data in Teams.items():
+                if team_data[3] == rank_ctr:
+                    print('\n', rank_ctr, '\t', team, '\t', Teams[team][0])
+            rank_ctr += 1
+
+    print('\n')
+    proceed = input('Return To Menu [Y]es Or [Enter] No: ')
+    print('\n')
+
+    if gen_der == 'M' or gen_der == 'm':
+        if proceed == 'Y' or proceed == 'y':
+            print('Sure Master!', user_name)
+            sleep(2)
+            clear()
+            # clear1()
+            print('''--------------------------------------------------------------------------------------------------
+
+
+                        ___                                              _                      _                    
+                         |  ._ _|_  _  ._ ._   _. _|_ o  _  ._   _. |   /  ._ o  _ |   _ _|_   /   _      ._   _ o |                        
+                        _|_ | | |_ (/_ |  | | (_|  |_ | (_) | | (_| |   \_ |  | (_ |< (/_ |_   \_ (_) |_| | | (_ | |    
+
+
+            --------------------------------------------------------------------------------------------------''')
+
+    if gen_der == 'F' or gen_der == 'f':
+        if proceed == 'Y' or proceed == 'y':
+            print('Sure Miss!', user_name)
+            sleep(2)
+            clear()
+            # clear1()
+            print('''--------------------------------------------------------------------------------------------------
+
+
+                    ___                                              _                      _                    
+                     |  ._ _|_  _  ._ ._   _. _|_ o  _  ._   _. |   /  ._ o  _ |   _ _|_   /   _      ._   _ o |                        
+                    _|_ | | |_ (/_ |  | | (_|  |_ | (_) | | (_| |   \_ |  | (_ |< (/_ |_   \_ (_) |_| | | (_ | |    
+
+
+             --------------------------------------------------------------------------------------------------''')
+
